@@ -58,6 +58,7 @@ class PackagedEntry(Entry):
     translations: str | None | bool = None
     github_team: str | None = None
     satellite: bool | None = False
+    packaging_url: str | None = None
     tests: dict = field(default_factory=dict)
 
     def __post_init__(self):
@@ -84,13 +85,19 @@ class PackagedEntry(Entry):
     def rpm_url(self):
         if not self.rpm:
             return None
-        return f'{PACKAGING_URL}/tree/rpm/develop/packages/{self.rpm_directory}/{self.rpm}'
+        base_url = self.packaging_url or PACKAGING_URL
+        if self.rpm_directory:
+            return f'{base_url}/tree/rpm/develop/packages/{self.rpm_directory}/{self.rpm}'
+        return f'{base_url}/tree/rpm/develop/packages/{self.rpm}'
 
     @property
     def deb_url(self):
         if not self.deb:
             return None
-        return f'{PACKAGING_URL}/tree/deb/develop/{self.deb_directory}/{self.deb}'
+        base_url = self.packaging_url or PACKAGING_URL
+        if self.deb_directory:
+            return f'{base_url}/tree/deb/develop/{self.deb_directory}/{self.deb}'
+        return f'{base_url}/tree/deb/develop/{self.deb}'
 
     @property
     def puppet_module(self):
