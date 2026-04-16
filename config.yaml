@@ -722,6 +722,11 @@ libraries:
     rpm: true
   obsah:
     rpm: python-obsah
+  pulp_smart_proxy:
+    rpm: python-pulp-smart-proxy
+    rpm_directory: ''
+    packaging_url: 'https://github.com/theforeman/pulpcore-packaging'
+    satellite: true
   safemode:
     rpm: true
 
