@@ -788,7 +788,7 @@ pulp_plugins:
   # Packaged in pulpcore-packaging, not foreman-packaging
   smart_proxy:
     rpm: true
-    github_team: 'theforeman/pulp'
+    github_team: 'theforeman/foremanctl'
     satellite: true
 
 auxiliary:
