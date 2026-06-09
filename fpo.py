@@ -18,6 +18,7 @@ class Entry:
     github_org: str = 'theforeman'
     installer: bool = True
     description: str | None = None
+    tag_format: str = 'v{version}'
 
     @property
     def ci_badges(self):
@@ -37,7 +38,10 @@ class Entry:
                 self.issues_url = f'https://github.com/{self.github_org}/{self.name}/issues'
 
 
+@dataclass
 class PuppetModule(Entry): # pylint: disable=too-few-public-methods
+    tag_format: str = '{version}'
+
     @property
     def ci_badges(self):
         url = f'{self.url}/actions/workflows/ci.yml'

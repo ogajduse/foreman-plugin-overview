@@ -1,4 +1,3 @@
----
 foreman:
   # Based on grep 'foreman::plugin ' puppet-foreman/manifests/plugin/*.pp | cut -d\' -f2
   plugins:
@@ -38,6 +37,7 @@ foreman:
       github_org: 'timogoebel'
       installer: false
       rpm: true
+      tag_format: '{version}'
     datacenter:
       installer: false
       deb: true
@@ -47,6 +47,7 @@ foreman:
       deb: true
       rpm: true
       github_team: 'theforeman/foreman_default_hostgroup'
+      tag_format: '{version}'
     dhcp_browser:
       deb: true
       rpm: true
@@ -68,6 +69,7 @@ foreman:
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     expire_hosts:
       deb: true
       rpm: true
@@ -75,6 +77,7 @@ foreman:
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     fog_proxmox:
       installer: true
       deb: true
@@ -89,6 +92,7 @@ foreman:
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     google:
       deb: true
       rpm: true
@@ -124,6 +128,7 @@ foreman:
       tests:
         github:
           Ruby: ruby_ci.yml
+      tag_format: '{version}'
     katello:
       name: 'katello'
       rpm: true
@@ -133,6 +138,7 @@ foreman:
       rpm_directory: 'katello'
       redmine: true
       satellite: true
+      tag_format: '{version}'
       tests:
         github:
           JavaScript: react_tests.yml
@@ -144,6 +150,7 @@ foreman:
       tests:
         github:
           Ruby: unit_tests.yaml
+      tag_format: '{version}'
     kubevirt:
       rpm: true
       translations: true
@@ -170,12 +177,14 @@ foreman:
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     netbox:
       github_org: 'dm-drogeriemarkt'
       rpm: true
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     openbolt:
       github_org: 'overlookinfra'
       deb: true
@@ -184,6 +193,7 @@ foreman:
       tests:
         github:
           Ruby: test.yml
+      tag_format: '{version}'
     omaha:
       deb: true
       rpm: true
@@ -191,8 +201,10 @@ foreman:
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     opennebula:
       github_team: 'theforeman/opennebula'
+      tag_format: '{version}'
     openscap:
       rpm: true
       translations: true
@@ -238,6 +250,7 @@ foreman:
       tests:
         github:
           Ruby: ruby_test.yml
+      tag_format: '{version}'
     remote_execution:
       deb: true
       rpm: true
@@ -257,6 +270,7 @@ foreman:
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     resource_quota:
       github_org: 'ATIX-AG'
       github_team: 'theforeman/atix'
@@ -267,6 +281,7 @@ foreman:
         github:
           JavaScript: js_tests.yml
           Ruby: ruby_tests.yml
+      tag_format: '{version}'
     rh_cloud:
       rpm: true
       rpm_directory: 'katello'
@@ -277,6 +292,7 @@ foreman:
         github:
           JavaScript: js_tests.yml
           Ruby: ruby_tests.yml
+      tag_format: '{version}'
     salt:
       deb: true
       rpm: true
@@ -286,6 +302,7 @@ foreman:
       tests:
         github:
           Ruby: ruby_tests.yml
+      tag_format: '{version}'
     scc_manager:
       github_org: 'ATIX-AG'
       github_team: 'theforeman/atix'
@@ -329,6 +346,7 @@ foreman:
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     tasks:
       name: foreman-tasks
       deb: true
@@ -369,6 +387,7 @@ foreman:
       tests:
         github:
           Ruby: ci.yml
+      tag_format: '{version}'
     virt_who_configure:
       rpm: true
       rpm_directory: 'katello'
@@ -401,6 +420,7 @@ foreman:
         github:
           Ruby: ci.yml
 
+      tag_format: '{version}'
 smart_proxy:
   # grep -R 'foreman_proxy::plugin::provider ' puppet-foreman_proxy/manifests/plugin | cut -d\' -f2
   providers:
@@ -408,9 +428,11 @@ smart_proxy:
       github_team: 'theforeman/bluecat'
       installer: false
       rpm: true
+      tag_format: '{version}'
     dhcp_device42:
       installer: false
       rpm: true
+      tag_format: '{version}'
     dhcp_dnsmasq:
       github_team: 'theforeman/proxy-dnsmasq'
       installer: false
@@ -439,6 +461,7 @@ smart_proxy:
       github_team: 'theforeman/proxy-dns-plugins'
       deb: true
       rpm: true
+      tag_format: '{version}'
     dns_route53:
       installer: false
       deb: true
@@ -468,12 +491,14 @@ smart_proxy:
       github_team: 'Katello/katello-core'
       rpm: true
       satellite: true
+      tag_format: '{version}'
     discovery:
       deb: true
       rpm: true
       puppet_acceptance_tests: true
       github_team: 'theforeman/discovery'
       satellite: true
+      tag_format: '{version}'
     dynflow:
       deb: true
       rpm: true
@@ -489,16 +514,19 @@ smart_proxy:
       deb: true
       rpm: true
       github_team: 'theforeman/monitoring'
+      tag_format: '{version}'
     omaha:
       deb: true
       rpm: true
       github_team: 'theforeman/omaha'
+      tag_format: '{version}'
     openbolt:
       deb: true
       rpm: true
       github_team: 'theforeman/overlookinfra' # also theforeman/betadots
       github_org: 'overlookinfra'
       puppet_acceptance_tests: 'openbolt'
+      tag_format: '{version}'
     openscap:
       rpm: true
       puppet_acceptance_tests: true
@@ -520,6 +548,7 @@ smart_proxy:
       deb: true
       rpm: true
       github_team: 'theforeman/salt'
+      tag_format: '{version}'
     shellhooks:
       deb: true
       rpm: true
@@ -536,6 +565,7 @@ cli:
       installer: false
       puppet_acceptance_tests: false
       satellite: true
+      tag_format: '{version}'
     foreman_ansible:
       deb: true
       rpm: true
@@ -617,6 +647,7 @@ cli:
       puppet_acceptance_tests: true
       satellite: true
       translations: true
+      tag_format: '{version}'
     foreman_salt:
       deb: true
       rpm: true
@@ -669,6 +700,7 @@ cli:
       github_team: 'Katello/cli'
       translations: true
       satellite: true
+      tag_format: '{version}'
 
 installer:
   modules:
@@ -693,6 +725,7 @@ client:
     rpm: ansiblerole-foreman_scap_client
     rpm_directory: plugins
     satellite: true
+    tag_format: '{version}'
   foreman_scap_client:
     github_team: 'theforeman/openscap'
     rpm: true
@@ -707,16 +740,19 @@ client:
   katello-pull-transport-migrate:
     rpm: true
     satellite: true
+    tag_format: '{version}'
   katello-host-tools:
     rpm: true
     github_org: 'Katello'
     github_team: 'Katello/katello-core'
+    tag_format: '{version}'
   puppet-foreman_scap_client:
     github_team: 'theforeman/openscap'
     installer: true
     rpm: true
     rpm_directory: plugins
     satellite: true
+    tag_format: 'v{version}'
 
 libraries:
   apipie-bindings:
@@ -724,6 +760,7 @@ libraries:
     deb: true
     rpm: true
     satellite: true
+    tag_format: '{version}'
   apipie-dsl:
     github_org: Apipie
     deb: true
@@ -747,6 +784,7 @@ libraries:
     github_team: 'theforeman/foremanctl'
     rpm: foremanctl
     satellite: true
+    tag_format: '{version}'
   journald-logger:
     deb: true
     rpm: true
@@ -781,6 +819,7 @@ libraries:
     github_team: 'theforeman/foremanctl'
     rpm: python-obsah
     satellite: true
+    tag_format: obsah-{version}
   safemode:
     github_team: 'theforeman/safemode'
     rpm: true
@@ -794,10 +833,12 @@ pulp_plugins:
     github_team: 'theforeman/foremanctl'
     satellite: true
 
+    tag_format: '{version}'
 auxiliary:
   foreman-documentation:
     description: "Official Katello documentation"
   forklift:
     description: "Tooling to deploy Foreman, primarily in test and development environments"
+    tag_format: '{version}'
   theforeman.org:
     description: "Official website, including the official manual"
